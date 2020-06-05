@@ -1,0 +1,78 @@
+<html>
+  <head>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+      google.charts.load('current', {'packages':['sankey']});
+      google.charts.setOnLoadCallback(drawChart);
+
+      function drawChart() {
+        var data = new google.visualization.DataTable();
+        data.addColumn('string', 'From');
+        data.addColumn('string', 'To');
+        data.addColumn('number', 'Weight');
+        data.addRows([
+          [ "Benedict Evans*", 'Business', 3 ],
+          [ "Benedict Evans*", 'Computer Science', 2 ],
+          [ 'Axios Science', 'Science', 5 ],
+          [ "Stratechery", 'Computer Science', 2 ],
+          [ "Stratechery", 'Business', 3 ],
+          [ 'Nature Briefing*', 'Science', 5 ],
+          [ 'Neuroscape News', 'Science', 5 ],
+          [ 'FoundMyFitness', 'Science', 5 ],
+          [ 'NEJM', 'Science', 5 ],
+          [ 'James Clear 3-2-1', 'Philosophy', 5 ],
+          [ 'Barking Up The Wrong Tree', 'Philosophy', 5 ],
+          [ 'Brain Food', 'Philosophy', 5 ],
+          [ 'The Batch', 'Computer Science', 5 ],
+          [ "Data is Plural", 'Computer Science', 5 ],
+          [ 'The Browser', 'Literature', 5 ],
+          [ 'The Browser', 'Random', 1 ],
+          [ 'Brain Food', 'Literature', 2 ],
+          [ 'The Deliberate', 'Random', 4 ],
+          [ "2pm", 'Business', 5 ],
+          [ "DealBook/", 'Business', 5 ],
+          [ 'Friday Finds*', 'Random', 5 ],
+          [ 'The Whippet*', 'Random', 5 ],
+          [ 'The Medley', 'Random', 5 ],
+          [ "Benedict Evans*", 'Random', 1 ],
+          [ '5-Bullet Friday', 'Random', 5 ],
+          [ 'Peter Attia*', 'Science', 5 ],
+          
+        ]);
+
+        // Sets chart options.
+        var options = {
+          width: 400,
+        };
+            var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f'];
+
+    var options = {
+      height: 600,
+      sankey: {
+        node: { label: { fontName: 'Arial',
+                         fontSize: 17,
+                       nodePadding: 200 } },
+        link: {
+          colorMode: 'gradient',
+          colors: colors
+        }
+      }
+    };
+
+        // Instantiates and draws our chart, passing in some options.
+        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+  <body>
+      <center>
+          <br>
+          <h2>My Newsletters </h2>
+    <div id="sankey_basic" style="width: 400px;"></div>
+          </center>
+      <p><br></p>
+* denote my favorites <br> <br>
+<a href="https://developers.google.com/chart/interactive/docs/gallery/sankey" target="_blank">Sankey chart</a>
+  </body>
+</html>
