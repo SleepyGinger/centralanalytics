@@ -11,47 +11,88 @@
         data.addColumn('string', 'To');
         data.addColumn('number', 'Weight');
         data.addRows([
-          [ "Benedict Evans*", 'Business', 3 ],
-          [ "Benedict Evans*", 'Computer Science', 2 ],
-          [ 'Axios Science', 'Science', 5 ],
-          [ "Stratechery", 'Computer Science', 2 ],
-          [ "Stratechery", 'Business', 3 ],
-          [ 'Nature Briefing*', 'Science', 5 ],
-          [ 'Neuroscape News', 'Science', 5 ],
-          [ 'FoundMyFitness', 'Science', 5 ],
-          [ 'NEJM', 'Science', 5 ],
-          [ 'James Clear 3-2-1', 'Philosophy', 5 ],
-          [ 'Barking Up The Wrong Tree', 'Philosophy', 5 ],
-          [ 'Brain Food', 'Philosophy', 5 ],
-          [ 'The Batch', 'Computer Science', 5 ],
-          [ "Data is Plural", 'Computer Science', 5 ],
-          [ 'The Browser', 'Literature', 5 ],
-          [ 'The Browser', 'Random', 1 ],
-          [ 'Brain Food', 'Literature', 2 ],
-          [ 'The Deliberate', 'Random', 4 ],
-          [ "2pm", 'Business', 5 ],
-          [ "DealBook/", 'Business', 5 ],
-          [ 'Friday Finds*', 'Random', 5 ],
-          [ 'The Whippet*', 'Random', 5 ],
-          [ 'The Medley', 'Random', 5 ],
-          [ "Benedict Evans*", 'Random', 1 ],
-          [ '5-Bullet Friday', 'Random', 5 ],
-          [ 'Peter Attia*', 'Science', 5 ],
+          [ 'Biology', 'Science', 15],
+          [ 'Tech', 'Science', 19],
+          [ 'General', 'Science', 15],
+        
+          [ 'Axios Science', 'General', 5 ],
           
+          [ 'Nature Briefing*', 'General', 5 ],
+          
+          [ 'Neuroscape News', 'Biology', 5 ],
+          
+          [ 'FoundMyFitness', 'Biology', 5 ],
+          
+          [ 'NEJM', 'General', 5 ],
+          
+          [ 'James Clear 3-2-1', 'Philosophy', 5 ],
+          
+          [ 'Barking Up The Wrong Tree', 'Philosophy', 5 ],
+          
+          [ 'The Batch', 'Tech', 5 ],
+          
+          [ "2pm", 'Business', 5 ],
+          
+          [ "DealBook/", 'Business', 5 ],
+            
+          [ "Data is Plural", 'Tech', 5 ],
+        
+          [ 'Peter Attia', 'Biology', 5 ],
+          [ 'Peter Attia', 'Philosophy', 2 ],    
+        
+          [ 'Brain Food', 'Philosophy', 2 ],
+          [ 'Brain Food', 'Literature', 3 ],
+          
+          [ 'The Browser', 'Literature', 5 ],
+          [ 'The Browser', 'Interesting', 1 ],
+          
+          [ 'The Deliberate', 'Interesting', 4 ],
+          [ 'The Deliberate', 'Philosophy', 4 ],
+           
+          [ "Stratechery", 'Tech', 2 ],
+          [ "Stratechery", 'Business', 3 ],
+         
+          
+          [ 'Philosophy', 'Literature', 15],
+          [ 'Interesting', 'Literature', 15],
+        
+          
+          [ "Benedict Evans*", 'Business', 3 ],
+          [ "Benedict Evans*", 'Tech', 2 ],
+          [ "Benedict Evans*", 'Interesting', 1 ],
+        
+          [ 'Friday Finds*', 'Interesting', 2 ],
+          [ 'Friday Finds*', 'Philosophy', 2 ],
+          [ 'Friday Finds*', 'Literature', 2 ],    
+          
+          [ 'The Whippet*', 'Interesting', 2 ],
+          [ 'The Whippet*', 'Philosophy', 2 ],
+          [ 'The Whippet*', 'Literature', 2 ],
+          
+          [ 'The Medley', 'Interesting', 5 ],
+          [ 'The Medley', 'Business', 5 ],
+          [ 'The Medley', 'Tech', 5 ],
+          
+          [ '5-Bullet Friday', 'Interesting', 2 ],
+          [ '5-Bullet Friday', 'Literature', 2 ],
+          [ '5-Bullet Friday', 'Philosophy', 1 ],
+
         ]);
 
         // Sets chart options.
         var options = {
-          width: 400,
+          width: 500,
         };
             var colors = ['#a6cee3', '#b2df8a', '#fb9a99', '#fdbf6f'];
 
     var options = {
-      height: 600,
+      height: 700,
       sankey: {
-        node: { label: { fontName: 'Arial',
-                         fontSize: 17,
-                       nodePadding: 200 } },
+        node: {
+        nodePadding: 14,
+        width: 3,
+        label: { fontName: 'Arial',
+                         fontSize: 17} },
         link: {
           colorMode: 'gradient',
           colors: colors
@@ -60,20 +101,24 @@
     };
 
         // Instantiates and draws our chart, passing in some options.
-        var chart = new google.visualization.Sankey(document.getElementById('sankey_basic'));
+        var chart = new google.visualization.Sankey(document.getElementById('sankey'));
         chart.draw(data, options);
       }
     </script>
   </head>
+    
   <body>
       <center>
           <br>
           <h2>My Newsletters </h2>
-    <div id="sankey_basic" style="width: 400px;"></div>
-          </center>
+    <div id="sankey" style="width: 500px;"></div>
+      <br>
+          
+      </center>
       <p><br></p>
-* denote my favorites <br> <br>
+* denotes always good <br> <br>
 <a href="https://developers.google.com/chart/interactive/docs/gallery/sankey" target="_blank">Sankey chart</a>
+      
       <style>
       body {
     background-color: #FFFFFF;
