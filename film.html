@@ -7,12 +7,13 @@
     #mynetwork {
       width: auto;
       height: 600px;
+      
     }
 
 body {
     background-color: #FFFFFF;
     font-family: Arial, Helvetica, sans-serif;
-    padding: 0 0 50px;
+    padding: 0 0 20px;
 }
   </style>
 </head>
@@ -20,8 +21,13 @@ body {
     <center>
     <h1> Films</h1>
 <div id="mynetwork"></div>
+         <button onClick="window.location.reload();">Refresh Page to Reset Graph</button>
     <br><br>
 <br>        </center>
+    Social graph showing movies I enjoy and how they relate to each other.
+    <br>
+    Play by dragging titles around.
+    <br>
     <a href="https://github.com/visjs/vis-network" target="_blank">Vis.js</a>
 <script type="text/javascript">
   // create an array with nodes
@@ -42,7 +48,7 @@ body {
     {id: 14, label: 'Fantastic Fungi'},
     {id: 15, label: 'Silicon Valley'},
     {id: 16, label: 'Rick and Morty'},
-    //{id: 17, label: 'Fantastic Fungi'},
+    {id: 17, label: 'Never Have I Ever'},
     {id: 18, label: 'DisneyNature: Monkey Kingdom'},
     {id: 19, label: 'DisneyNature: Oceans'},
         
@@ -81,7 +87,8 @@ body {
     {from: 12, to: 15},
     {from: 16, to: 15},
     {from: 16, to: 8},
-    {from: 16, to: 12},  
+    {from: 16, to: 12},
+    {from: 17, to: 15},
 ]);
 
   // create a network
@@ -90,7 +97,14 @@ body {
     nodes: nodes,
     edges: edges
   };
-  var options = {};
+  var options = {
+  
+  layout: {
+    randomSeed: 28,
+    improvedLayout:true,
+    clusterThreshold: 150
+  }
+};
   var network = new vis.Network(container, data, options);
 </script>
 </body>
